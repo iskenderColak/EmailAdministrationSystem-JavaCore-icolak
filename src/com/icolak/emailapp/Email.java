@@ -1,5 +1,6 @@
 package com.icolak.emailapp;
 
+import java.sql.SQLOutput;
 import java.util.*;
 import java.io.*;
 
@@ -20,5 +21,35 @@ public class Email {
         this.lastName = lastName;
         System.out.println("New Employee: " + this.firstName + " " + this.lastName);
     }
+
+    // Generate mail method
+    private String generate_email() {
+        return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@" +
+                this.department.toLowerCase() + ".company.com";
+    }
+
+    // Asking for department
+    private String setDepartment() {
+        System.out.println("Department codes \n1 for Sales \n2 for Development \n3 for Accounting \n0 for none");
+        boolean flag = false;
+        do{
+            System.out.println("Enter Department code");
+            int choice = s.nextInt();
+            switch (choice) {
+                case 1:
+                    return "Sales";
+                case 2:
+                    return "Development";
+                case 3:
+                    return "Accounting";
+                case 0:
+                    return "None";
+                default:
+                    System.out.println("Invalid choice please choose it again");
+            }
+        } while (!flag);
+        return null;
+    }
+
 }
 
