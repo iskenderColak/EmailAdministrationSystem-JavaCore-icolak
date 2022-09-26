@@ -1,6 +1,5 @@
 package com.icolak.emailapp;
 
-import java.sql.SQLOutput;
 import java.util.*;
 import java.io.*;
 
