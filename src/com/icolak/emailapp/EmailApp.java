@@ -18,7 +18,8 @@ public class EmailApp {
         int choice = -1;
         do {
             System.out.println("\n******\nEnter your choice\n1.Show Info\n2.Change Password\n" +
-                    "3.Change Mailbox Capacity\n4.Set Alternate Mail\n5.Exit");
+                    "3.Change Mailbox Capacity\n4.Set Alternate Mail\n5.Store Data in File\n" +
+                    "6.Display data from file\n7.Exit");
             choice = scanner.nextInt();
             switch (choice) {
                 case 1:
@@ -34,12 +35,18 @@ public class EmailApp {
                     em1.alternate_email();
                     break;
                 case 5:
+                    em1.storeFile();
+                    break;
+                case 6:
+                    em1.readFile();
+                    break;
+                case 7:
                     System.out.println("Thank you for using application!");
                     break;
                 default:
                     System.out.println("Invalid choice!!\nEnter proper choice again");
             }
-        } while (choice!=5);
+        } while (choice!=7);
 
     }
 }
